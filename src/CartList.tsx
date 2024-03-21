@@ -31,7 +31,6 @@ const dados: Item [] = [
 
 const renderItem = ({item}: {item: Item}) => (
     <View style={styles.item}>
-        <Text style={styles.text1}>{item.nome}</Text>
     <TouchableOpacity style={styles.item}>
         <Text style={styles.text1}>{item.nome}</Text>
         <Image source={item.image} style={styles.imageIcon}></Image>
@@ -127,8 +126,8 @@ const styles = StyleSheet.create({
     },
     imageIcon: {
         marginTop: 20,
-        width: 320,
-        height: 150,
+        width: 200,
+        height: 100,
         borderRadius: 20
     },
     imageLogo: {
