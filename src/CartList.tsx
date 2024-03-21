@@ -4,39 +4,38 @@ import {View, Text, StyleSheet, TouchableOpacity,FlatList, StatusBar,Image, Imag
 
 interface Item {
     id: string,
-    qtd: string,
     nome: string,
     image: any
     
 }
 
 const dados: Item [] = [
-{id:"1" , nome: "𝑿-𝑩𝑼𝑹𝑮𝑼𝑬𝑹", qtd: '0'  , image: require('./assets/image/pao1.png')},
-{id:"2" , nome: "𝑿-𝑩𝑨𝑪𝑶𝑵", qtd: '0' ,image: require('./assets/image/pao2.png')},
-{id:"3" , nome: "𝑿-𝑬𝑮𝑮",  qtd: '0', image: require('./assets/image/pao3.png')},
-{id:"4" , nome: "𝑿-𝑭𝑹𝑨𝑵𝑮𝑶", qtd: '0',  image: require('./assets/image/pao4.png')},
-{id:"5" , nome: "𝑿-𝑺𝑨𝑳𝑨𝑴𝑬", qtd: '0' , image: require('./assets/image/pao5.png')},
-{id:"6" , nome: "𝑿-𝑪𝑨𝑳𝑨𝑩𝑹𝑬𝑺𝑨",  qtd: '0',image: require('./assets/image/pao6.png')},
-{id:"7" , nome: "𝑩𝑰𝑮 𝑩𝑼𝑹𝑮𝑼𝑬𝑹 ", qtd: '0',  image: require('./assets/image/pao1.png')},
-{id:"8" , nome: "𝑩𝑰𝑮 𝑩𝑨𝑪𝑶𝑵", qtd: '0', image: require('./assets/image/pao2.png')},
-{id:"9" , nome: "𝑩𝑰𝑮 𝑬𝑮𝑮",  qtd: '0', image: require('./assets/image/pao3.png')},
-{id:"10" , nome: "𝑩𝑰𝑮 𝑭𝑹𝑨𝑵𝑮𝑶",  qtd: '0', image: require('./assets/image/pao4.png')},
-{id:"11" , nome: "𝑩𝑰𝑮 𝑺𝑨𝑳𝑨𝑴𝑬",  qtd: '0', image: require('./assets/image/pao5.png')},
-{id:"12" , nome: "𝑩𝑰𝑮 𝑪𝑨𝑳𝑨𝑩𝑹𝑬𝑺𝑨", qtd: '0',image: require('./assets/image/pao6.png')},
-{id:"13" , nome: "𝑳𝑨𝑵𝑪𝑯𝑬 𝑴𝑼𝑰𝑻𝑶 𝑳𝑶𝑼𝑪𝑶", qtd: '0',  image: require('./assets/image/pao5.png')},
-{id:"14" , nome: "𝑳𝑨𝑵𝑪𝑯𝑬 𝑴𝑼𝑰𝑻𝑶 𝑩𝑶𝑴",  qtd: '0', image: require('./assets/image/pao4.png')},
-{id:"15" , nome: "𝑳𝑨𝑵𝑪𝑯𝑬 𝑬𝑿𝑪𝑬𝑳𝑬𝑵𝑻𝑬",  qtd: '0', image: require('./assets/image/pao6.png')},
+{id:"1" , nome: "𝑿-𝑩𝑼𝑹𝑮𝑼𝑬𝑹",  image: require('./assets/image/pao1.png')},
+{id:"2" , nome: "𝑿-𝑩𝑨𝑪𝑶𝑵", image: require('./assets/image/pao2.png')},
+{id:"3" , nome: "𝑿-𝑬𝑮𝑮",  image: require('./assets/image/pao3.png')},
+{id:"4" , nome: "𝑿-𝑭𝑹𝑨𝑵𝑮𝑶",  image: require('./assets/image/pao4.png')},
+{id:"5" , nome: "𝑿-𝑺𝑨𝑳𝑨𝑴𝑬", image: require('./assets/image/pao5.png')},
+{id:"6" , nome: "𝑿-𝑪𝑨𝑳𝑨𝑩𝑹𝑬𝑺𝑨", image: require('./assets/image/pao6.png')},
+{id:"7" , nome: "𝑩𝑰𝑮 𝑩𝑼𝑹𝑮𝑼𝑬𝑹 ",  image: require('./assets/image/pao1.png')},
+{id:"8" , nome: "𝑩𝑰𝑮 𝑩𝑨𝑪𝑶𝑵",  image: require('./assets/image/pao2.png')},
+{id:"9" , nome: "𝑩𝑰𝑮 𝑬𝑮𝑮",  image: require('./assets/image/pao3.png')},
+{id:"10" , nome: "𝑩𝑰𝑮 𝑭𝑹𝑨𝑵𝑮𝑶",  image: require('./assets/image/pao4.png')},
+{id:"11" , nome: "𝑩𝑰𝑮 𝑺𝑨𝑳𝑨𝑴𝑬", image: require('./assets/image/pao5.png')},
+{id:"12" , nome: "𝑩𝑰𝑮 𝑪𝑨𝑳𝑨𝑩𝑹𝑬𝑺𝑨",  image: require('./assets/image/pao6.png')},
+{id:"13" , nome: "𝑳𝑨𝑵𝑪𝑯𝑬 𝑴𝑼𝑰𝑻𝑶 𝑳𝑶𝑼𝑪𝑶", image: require('./assets/image/pao5.png')},
+{id:"14" , nome: "𝑳𝑨𝑵𝑪𝑯𝑬 𝑴𝑼𝑰𝑻𝑶 𝑩𝑶𝑴",  image: require('./assets/image/pao4.png')},
+{id:"15" , nome: "𝑳𝑨𝑵𝑪𝑯𝑬 𝑬𝑿𝑪𝑬𝑳𝑬𝑵𝑻𝑬", image: require('./assets/image/pao6.png')},
 
 ]
 
+
+
 const renderItem = ({item}: {item: Item}) => (
-    <View style={styles.item}>
     <TouchableOpacity style={styles.item}>
         <Text style={styles.text1}>{item.nome}</Text>
         <Image source={item.image} style={styles.imageIcon}></Image>
-        <TouchableOpacity><Image></Image></TouchableOpacity>
+      
     </TouchableOpacity>
-    </View>
 )
 
 function CartList(): React.JSX.Element {
@@ -126,8 +125,8 @@ const styles = StyleSheet.create({
     },
     imageIcon: {
         marginTop: 20,
-        width: 200,
-        height: 100,
+        width: 320,
+        height: 150,
         borderRadius: 20
     },
     imageLogo: {
