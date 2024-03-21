@@ -35,6 +35,7 @@ const renderItem = ({item}: {item: Item}) => (
     <TouchableOpacity style={styles.item}>
         <Text style={styles.text1}>{item.nome}</Text>
         <Image source={item.image} style={styles.imageIcon}></Image>
+        <TouchableOpacity><Image></Image></TouchableOpacity>
     </TouchableOpacity>
     </View>
 )
